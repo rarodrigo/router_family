@@ -1,4 +1,4 @@
-# Dynamic and automatic validation process inside of device Cisco Family
+# Dynamic and automatic validation process based device of Cisco Family
 
 The process developed here are related with different modules of Ansible and using functions by NAPALM.
 

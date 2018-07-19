@@ -1,0 +1,19 @@
+---
+- name: GET VARIABLES FROM CSVFILE
+  set_fact:
+    vars_dict:
+        DHCP: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=1 delimiter=,') }}"
+        dhcp_exclude1_start: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=2 delimiter=,') }}"
+        dhcp_exclude1_end: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=3 delimiter=,') }}"
+        dhcp_network: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=4 delimiter=,') }}"
+        dhcp_netmask: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=5 delimiter=,') }}"
+        dhcp_gateway: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=6 delimiter=,') }}"
+        new_hostname: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=7 delimiter=,') }}"
+        id_loopback: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=8 delimiter=,') }}"
+        ip_loopback: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=9 delimiter=,') }}"
+        mask_loopback: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=10 delimiter=,') }}"
+        ip_loopback_x: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=11 delimiter=,') }}"
+        mask_loopback_x: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=12 delimiter=,') }}"
+        ip_loopback_y: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=13 delimiter=,') }}"
+        mask_loopback_y: "{{ lookup('csvfile', '{{ inventory_hostname }} file=./excel/test.csv col=14 delimiter=,') }}"
+  with_items: "{{ inventory_hostname }}"

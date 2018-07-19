@@ -1,0 +1,17 @@
+---
+vars_from_csv: "{{ vars_dict }}"
+
+cisco_881_l2_interfaces:
+  - FastEthernet0
+  - FastEthernet1
+  - FastEthernet2
+  - FastEthernet3
+
+loopback_id:
+  - 5
+  - 6
+  - 7
+  - 10
+  - 11
+  - 12
+  - 13

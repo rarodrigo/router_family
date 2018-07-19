@@ -1,0 +1,10 @@
+---
+- name: GET FACTS DEVICE
+  napalm_get_facts:
+      hostname: "{{ inventory_hostname }}"
+      username: "{{ creds['username'] }}"
+      password: "{{ creds['password'] }}"
+      dev_os: ios
+
+- name: SET FACT OF CHASSI
+  set_fact: model="{{ napalm_model }}"

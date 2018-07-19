@@ -1,0 +1,7 @@
+---
+- name: TEMPLATE 881
+  template:
+    src: ./template/script_881.j2
+    dest: ./template/configuration/script_{{ inventory_hostname }}_881.conf
+  with_items: "{{ inventory_hostname }}"
+  when: "'./excel/test.csv is defined'"

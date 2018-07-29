@@ -1,0 +1,14 @@
+---
+- name: GET FACTS NAPALM DEVICE MODEL
+  napalm_get_facts:
+      hostname: "{{ inventory_hostname }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+      dev_os: "{{ OSFOUND }}"
+  when: "OSFOUND == 'ios'"
+
+- name: SET FACT OF CHASSI MODEL
+  set_fact: iosmodel="{{ napalm_model }}"
+  when: "OSFOUND == 'ios'"
+
+- debug: var=iosmodel

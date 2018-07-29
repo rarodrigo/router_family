@@ -1,0 +1,9 @@
+---
+- name: TEMPLATE CSR1000V
+  template:
+    src: ./template/script_ios.j2
+    dest: ./template/configuration/script_{{ inventory_hostname }}_1000V.conf
+  with_items: "{{ inventory_hostname }}"
+  when:
+    - "'./excel/test.csv is defined'"
+    - "OSFOUND == 'ios'"

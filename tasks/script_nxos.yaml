@@ -1,0 +1,9 @@
+---
+- name: TEMPLATE NXOS
+  template:
+    src: ./template/script_nxos.j2
+    dest: ./template/configuration/script_{{ inventory_hostname }}_nxos.conf
+  with_items: "{{ inventory_hostname }}"
+  when:
+    - "'./excel/test.csv is defined'"
+    - "OSFOUND == 'nxos'"

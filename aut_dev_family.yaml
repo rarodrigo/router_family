@@ -2,12 +2,9 @@
 - name: GET DEVICE FAMILY
   hosts: all
   gather_facts: no
-  connection: local
+  connection: network_cli
 
   tasks:
-  - name: OBTAIN LOGIN CREDENTIALS
-    include_vars: secret.yaml
-
   - name: GET DEVICE FAMILY
     include_role:
       name: get_device_family
@@ -17,10 +14,10 @@
       name: lookup_csv_info
     when: "'./excel/test.csv is defined'"
 
-  - name: EXECUTE SCRIPT 881
-    include_tasks: ./tasks/script_881.yaml
-    when: "model == '881'"
+  - name: EXECUTE SCRIPT NXOS
+    include_tasks: ./tasks/script_nxos.yaml
+    when: "OSFOUND == 'nxos'"
 
   - name: EXECUTE SCRIPT CSR1000V
-    include_tasks: ./tasks/script_CSR1000v.yaml
-    when: "model == 'CSR1000V'"
+    include_tasks: ./tasks/script_ios.yaml
+    when: "OSFOUND == 'ios'"

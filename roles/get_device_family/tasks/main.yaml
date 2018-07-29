@@ -1,10 +1,19 @@
 ---
-- name: GET FACTS DEVICE
-  napalm_get_facts:
-      hostname: "{{ inventory_hostname }}"
-      username: "{{ creds['username'] }}"
-      password: "{{ creds['password'] }}"
-      dev_os: ios
+- name: GATHER OS via SNMP
+  snmp_device_version:
+    host: "{{ inventory_hostname }}"
+    community: public
+    version: 2c
+  register: output
 
-- name: SET FACT OF CHASSI
-  set_fact: model="{{ napalm_model }}"
+- set_fact: OSFOUND="{{output.ansible_facts.ansible_device_os}}"
+
+- debug: var=OSFOUND
+
+- name: EXECUTE SCRIPT NXOS
+  include_tasks: ./tasks/device_nxos.yaml
+  when: "OSFOUND == 'nxos'"
+
+- name: EXECUTE SCRIPT IOS
+  include_tasks: ./tasks/device_ios.yaml
+  when: "OSFOUND == 'ios'"

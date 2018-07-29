@@ -1,9 +1,22 @@
-[routers]
-R1 ansible_host=192.168.0.22
-#R1 ansible_host=192.168.0.22
-#R1 ansible_host=192.168.0.22
-#R1 ansible_host=192.168.0.22
-#R1 ansible_host=192.168.0.22
-#R1 ansible_host=192.168.0.22
-#R1 ansible_host=192.168.0.22
-#R1 ansible_host=192.168.0.22
+[all:vars]
+ansible_connection=network_cli
+ansible_user=rodrigo
+ansible_password=rodrigo@123
+ansible_network_os=ios
+ansible_network_os=nxos
+become=yes
+become_method=enable
+
+[ios]
+CSR1 ansible_host=192.168.0.47
+#CSR2 ansible_host=192.168.0.47
+CSR3 ansible_host=192.168.0.47
+
+[nxos]
+NXOS ansible_host=10.0.0.6
+
+[iosv]
+IOSv ansible_host=10.0.0.10
+
+[xrv]
+#XRV ansible_host=10.0.0.2

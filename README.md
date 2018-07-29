@@ -2,7 +2,7 @@
 
 The process developed here are related with different modules of Ansible and using functions like NAPALM and other library developed by community in order to help get correct information from devices.
 
-#Requirements
+##Requirements
 
 Follow the process to use this deploy
 
@@ -19,7 +19,7 @@ ansible 2.6.2
   python version = 2.7.12 (default, Dec  4 2017, 14:50:18) [GCC 5.4.0 20160609]
 ```
 
-#Comments
+##Comments
 
 This project has idea to collect automatically in Cisco device your module/family via `snmp ` and `get_facts` and you can compare which best for you because NAPALM has other status can be used after to go through in your deployment. We could create and developed your scripts based in some rules using a static inventory built in csv file and organize those script creating different tasks.
 

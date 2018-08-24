@@ -1,0 +1,7 @@
+---
+ansible_connection: network_cli
+ansible_user: rodrigo
+ansible_password: rodrigo@123
+become: yes
+become_method: enable
+ansible_network_os: nxos

@@ -1,0 +1,9 @@
+---
+- name: TEMPLATE IOS-XR
+  template:
+    src: ./template/script_ios_xr.j2
+    dest: ./template/configuration/script_{{ inventory_hostname }}_ios_xr.conf
+  with_items: "{{ inventory_hostname }}"
+  when:
+    - "'./excel/test.csv is defined'"
+    - "OSFOUND == 'ios-xr'"

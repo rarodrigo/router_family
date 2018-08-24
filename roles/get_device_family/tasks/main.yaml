@@ -17,3 +17,7 @@
 - name: EXECUTE SCRIPT IOS
   include_tasks: ./tasks/device_ios.yaml
   when: "OSFOUND == 'ios'"
+
+- name: EXECUTE SCRIPT IOS-XR
+  include_tasks: ./tasks/device_ios_xr.yaml
+  when: "OSFOUND == 'ios-xr'"

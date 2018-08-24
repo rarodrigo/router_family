@@ -21,3 +21,7 @@
   - name: EXECUTE SCRIPT CSR1000V
     include_tasks: ./tasks/script_ios.yaml
     when: "OSFOUND == 'ios'"
+
+  - name: EXECUTE SCRIPT IOS-XR
+    include_tasks: ./tasks/script_ios_xr.yaml
+    when: "OSFOUND == 'ios-xr'"

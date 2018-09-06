@@ -1,15 +1,15 @@
 # Dynamic and automatic validation process based Cisco Family
 
-The process developed here are related with different modules of Ansible and using functions like NAPALM and other library developed by community in order to help get correct information from devices.
+The process developed here used different modules of Ansible and projects like NAPALM and other libraries developed by the community in order to access and get correct information from Cisco network devices.
 
 ## Requirements
 
-Follow the process to use this deploy
+Follow these steps
 
-1) Install **nelsnmp** - ```pip install nelsnmp --upgrade```
-2) Install **ansible-snmp** - Access this code done by [networklore](https://github.com/networklore/ansible-snmp)
-3) Refer in `ansible.cfg` the library installed before via folder you make download through `git clone`
-4) Validate inside correct version of Ansible using `network-cli` as connection.
+1. Install **nelsnmp** - ```pip install nelsnmp --upgrade```
+2. Install **ansible-snmp** - Access this code done by [networklore](https://github.com/networklore/ansible-snmp)
+3. Refer in `ansible.cfg` the library installed before via folder you make download through `git clone`
+4. Validate inside correct version of Ansible using `network-cli` as connection.
 ```
 ansible 2.6.2
   config file = /etc/ansible/ansible.cfg
@@ -21,8 +21,8 @@ ansible 2.6.2
 
 ## Comments
 
-This project has idea to collect automatically in Cisco device your module/family via `snmp ` and `get_facts` and you can compare which best for you because NAPALM has other status can be used after to go through in your deployment. We could create and developed your scripts based in some rules using a static inventory built in csv file and organize those script creating different tasks.
+This project has idea to collect automatically in Cisco device your module/family via `snmp ` and `get_facts` and you can compare which is best for you because NAPALM has other status that can be used after to go through in your deployment. We could create and developed your scripts based on some rules using a static inventory built in a .csv file and organize those script creating different tasks.
 
-For this example none module were execute to access device and implement scripts, however this action is only add module `ios_config` or `nxos_config`
+For this example non modules were executed to access device and implement scripts, however this action requires only that you add module `ios_config` or `nxos_config`
 
-If you have more idea fell free to contact to build this developed.
+If you have other ideas, feel free to contact (e.g. create a new issue) to help this be developed.

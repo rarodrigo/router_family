@@ -7,6 +7,6 @@ The bug report can be execute via a `Pull Request` detailed the problems seen an
 
 ## Pull Request
 
-<li> Fill in the required [template](https://github.com/rarodrigo/router_family/blob/master/docs/pull_request_template.md)
-<li> Do not include issue numbers in the PR title
-<li> Include screenshots and animated GIFs in your pull request whenever possible.
+1. Fill in the [require template](https://github.com/rarodrigo/router_family/blob/master/docs/pull_request_template.md)
+2. Do not include issue numbers in the PR title
+3. Include screenshots and animated GIFs in your pull request whenever possible.
